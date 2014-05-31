@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/MainTitlebar"
+    style="@style/MainTitleBarStyle">
+    <ImageView
+        android:src="@drawable/scs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleMainScs" />
+    <TextView
+        android:id="@+id/titleMainLeft"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titleScs"
+        android:layout_toRightOf="@+id/titleMainScs"
+        android:textColor="#ffff0019"
+        android:paddingLeft="5dp" />
+    <TextView
+        android:id="@+id/titleMainRight"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titleAsst"
+        android:layout_toRightOf="@+id/titleMainLeft"
+        android:textColor="#ffd1cbca"
+        android:paddingLeft="5dp" />
+</LinearLayout>
