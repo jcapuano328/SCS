@@ -34,9 +34,8 @@ public class ListItemAdapter extends ArrayAdapter<ica.SCS.Core.Game> {
         TextView textView = (TextView) rowView.findViewById(R.id.label);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
         textView.setText(game.getName() + " - " + game.getDesc());
-        String s = "drawable/" + game.getImage();
 
-        int resid = context.getResources().getIdentifier(s, null, context.getPackageName());
+        int resid = context.getResources().getIdentifier("drawable/" + game.getImage(), null, context.getPackageName());
         imageView.setImageResource(resid);
 
         return rowView;

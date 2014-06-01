@@ -1,6 +1,7 @@
 package ica.SCS;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -47,6 +48,10 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Game game = games.get(position);
                 // display the game view
+                Intent gameDetail = new Intent (me, GameActivity.class);
+                gameDetail.putExtra("Game", game.getId());
+
+                startActivity (gameDetail);
             }
         });
     }

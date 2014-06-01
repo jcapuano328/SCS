@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <include
+        android:id="@+id/includeGameTitlebar"
+        layout="@layout/gametitlebar" />
+    <LinearLayout
+        android:id="@+id/layoutTurn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/includeGameTitlebar"
+        android:weightSum="1.0">
+        <Button
+            android:id="@+id/btnTurnPrev"
+            android:text="-"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:layout_toLeftOf="@+id/textTurn"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+        <TextView
+            android:id="@+id/textTurn"
+            android:text="Aug 8-7 1914"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnTurnPrev"
+            android:layout_alignTop="@+id/btnTurnPrev"
+            android:layout_weight=".70"
+            android:gravity="center" />
+        <Button
+            android:id="@+id/btnTurnNext"
+            android:text="+"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:layout_alignTop="@+id/btnTurnPrev"
+            android:layout_toRightOf="@+id/textTurn"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+    </LinearLayout>
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutTurn"
+        android:id="@+id/space1"
+        android:minHeight="10dp"
+        android:paddingTop="10dp" />
+    <LinearLayout
+        android:id="@+id/layoutPhase"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/space1"
+        android:weightSum="1.0">
+        <Button
+            android:id="@+id/btnPhasePrev"
+            android:text="-"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:layout_toLeftOf="@+id/textPhase"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+        <TextView
+            android:id="@+id/textPhase"
+            android:text="German: Reinforcements"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnPhasePrev"
+            android:layout_alignTop="@+id/btnPhasePrev"
+            android:layout_weight=".70"
+            android:gravity="center" />
+        <Button
+            android:id="@+id/btnPhaseNext"
+            android:text="+"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:layout_alignTop="@+id/btnPhasePrev"
+            android:layout_toRightOf="@+id/textPhase"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+    </LinearLayout>
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutPhase"
+        android:id="@+id/space2"
+        android:minHeight="10dp"
+        android:paddingTop="10dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/space2"
+        android:id="@+id/layoutActions"
+        android:weightSum="1">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".50"
+            android:gravity="center"
+            android:id="@+id/layoutActions1"
+            android:weightSum="1">
+            <ImageButton
+                android:src="@drawable/barrage"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".45"
+                android:id="@+id/btnBarrage"
+                android:scaleType="fitXY" />
+            <ImageButton
+                android:src="@drawable/combat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".45"
+                android:id="@+id/btnCombat"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".50"
+            android:layout_below="@id/layoutActions1"
+            android:id="@+id/layoutActions2"
+            android:gravity="center"
+            android:weightSum="1">
+            <ImageButton
+                android:src="@drawable/blank"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".45"
+                android:id="@+id/btnCustom"
+                android:scaleType="fitXY" />
+            <ImageButton
+                android:src="@drawable/victory"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".45"
+                android:id="@+id/btnVictory"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

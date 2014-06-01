@@ -12,7 +12,7 @@ public class Saved {
 
     public Saved() {
         game = 0;
-        turn = 1;
+        turn = 0;
         phase = 0;
         player1VP = 0;
         player2VP = 0;
@@ -60,7 +60,7 @@ public class Saved {
     
     public void reset(Game g) {
 		game = g.getId();
-		turn = 1;
+		turn = 0;
 		phase = 0;
         player1VP = 0;
         player2VP = 0;
