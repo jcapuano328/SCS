@@ -270,7 +270,7 @@ public class GameRepository {
                 else if (name.equals("hi")) {
                     r.setHi(reader.nextInt());
                 }
-                else if (name.equals("results")) {
+                else if (name.equals("result")) {
                     r.setResult(reader.nextString());
                 }
                 else {

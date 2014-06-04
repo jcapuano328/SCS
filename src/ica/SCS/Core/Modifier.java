@@ -18,6 +18,12 @@ public class Modifier {
         value = 0;
         count = 0;
     }
+    public Modifier(Modifier m) {
+        type = m.getType();
+        name = m.getName();
+        value = m.getValue();
+        count = m.getCount();
+    }
 
     public String getType() {
         return type;
@@ -53,24 +59,24 @@ public class Modifier {
     
     public double modifyMULT() {
         double mult = 1;
-        if (type.equals("mult")) {
-            mult *= (value / (count > 0 ? count : 1));
+        if (type.equals("mult") && count > 0) {
+            mult *= (value / count);
         }
 	    return mult;
 	}
     
     public int modifyDRM() {
 	    int drm=0;
-        if (type.equals("drm")) {
-            drm = (int)(value * (count > 0 ? count : 1));
+        if (type.equals("drm") && count > 0) {
+            drm = (int)(value * count);
         }
 	    return drm;
 	}
     
     public int modifySHIFT() {
 	    int shift=0;
-        if (type.equals("shift")) {
-            shift = (int)(value * (count > 0 ? count : 1));
+        if (type.equals("shift") && count > 0) {
+            shift = (int)(value * count);
         }
 	    return shift;
 	}

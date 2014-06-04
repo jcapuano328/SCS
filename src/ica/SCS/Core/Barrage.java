@@ -20,6 +20,18 @@ public class Barrage {
         this.table = table;
     }
 
+    public Results<String> getDefaultStrength() {
+        return table.getDefault();
+    }
+    
+    public String[] getStrengthList() {
+        return table.getValueList();
+	}    
+    
+    public int getStrengthIndex(Results<String> item) {
+        return table.getValueIndex(item);
+	}    
+    
     public String resolve(int die1, int die2, String str, Terrain terrain, ArrayList<Modifier> modifiers) {
         int dice = table.getDiceValue(die1, die2, 0);
         int drm = 0;

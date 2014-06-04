@@ -110,4 +110,26 @@ public class Game {
     public void setBarrage(Barrage barrage) {
         this.barrage = barrage;
     }
+    
+    public Terrain getDefaultTerrain() {
+        return terrains.get(0);
+    }
+    
+    public String[] getTerrainList() {
+		ArrayList<String> l = new ArrayList<String>();
+		for (Terrain t : terrains)
+			l.add(t.getName());
+        String[] a = new String[l.size()];
+		l.toArray(a);
+        return a;
+	}    
+    
+    public int getTerrainIndex(Terrain t) {
+		for (int i=0; i<terrains.size(); i++) {
+			if (terrains.get(i).getName().equals(t.getName()))
+				return i;
+		}
+		return 0;
+	}    
+    
 }

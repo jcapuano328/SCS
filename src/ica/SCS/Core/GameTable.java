@@ -59,6 +59,36 @@ public class GameTable<T extends Comparable<? super T>> {
         this.modifiers = modifiers;
     }
 
+    public ArrayList<Modifier> cloneModifiers() {
+        ArrayList<Modifier> l = new ArrayList<Modifier>();
+        for (Modifier m : modifiers) {
+            l.add(new Modifier(m));
+        }
+        return l;
+    }
+    
+    
+    public Results<T> getDefault() {
+        return table.get(0);
+    }
+    
+    public String[] getValueList() {
+		ArrayList<String> l = new ArrayList<String>();
+		for (Results<T> t : table)
+			l.add(t.getValue().toString());
+        String[] a = new String[l.size()];
+		l.toArray(a);
+        return a;
+	}    
+    
+    public int getValueIndex(Results<T> item) {
+		for (int i=0; i<table.size(); i++) {
+			if (table.get(i).getValue().equals(item.getValue()))
+				return i;
+		}
+		return 0;
+	}    
+    
     public int getDiceValue(int die1, int die2, int drm) {
 	    int dice = 0;
 	    if (dd.getBase().equals("d")) {
@@ -80,15 +110,13 @@ public class GameTable<T extends Comparable<? super T>> {
 	}
 
     public Results<T> findResults(T v, int shift) {
-        Results<T> res = null;
         int idx = 0;
         for (int i=0; i<table.size(); i++) {
             Results<T> r = table.get(i);
-            if (r.lessThan(v)) {
+            if (r.compare(v)) {
                 idx = i;
                 break;
             }
-            
         }
 		if (idx < 0) {
             idx = table.size() - 1;

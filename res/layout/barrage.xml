@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+        <include
+            android:id="@+id/includeBarrageTitlebar"
+            layout="@layout/subtitlebar" />
+        <LinearLayout
+            android:id="@+id/layoutBarrageStrengthSelect"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0"
+            android:paddingBottom="10dp">
+            <TextView
+                android:text="Strength"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight=".15"
+                android:gravity="center_vertical"
+                android:layout_toLeftOf="@+id/spinBarrageStrength"
+                android:id="@+id/lblBarrageStrength" />
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".75"
+                android:layout_toRightOf="@+id/lblBarrageStrength"
+                android:id="@+id/spinBarrageStrength" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutBarrageTerrain"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0"
+            android:paddingBottom="10dp">
+            <TextView
+                android:text="Terrain"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight=".15"
+                android:gravity="center_vertical"
+                android:layout_toLeftOf="@+id/spinBarrageTerrain"
+                android:id="@+id/lblBarrageTerrain" />
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".75"
+                android:layout_toRightOf="@+id/lblBarrageTerrain"
+                android:id="@+id/spinBarrageTerrain" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/layoutBarrageModifiers"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+            <ListView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/listBarrageModifiers"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutBarrageDice"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:weightSum="1.0"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+            <ImageView
+                android:id="@+id/imgBarrageDie1"
+                android:src="@drawable/whiteb1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:layout_gravity="center"
+                android:clickable="true" />
+            <ImageView
+                android:id="@+id/imgBarrageDie2"
+                android:src="@drawable/redw1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/imgBarrageDie1"
+                android:clickable="true" />
+            <Button
+                android:id="@+id/btnBarrageDiceRoll"
+                android:text="Roll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".25"
+                android:layout_alignTop="@+id/imgBarrageDie1"
+                android:layout_toRightOf="@+id/imgBarrageDie2"
+                android:background="@drawable/red_button"
+                style="@style/button_text" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutBarrageResults"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0"
+            android:paddingTop="10dp">
+            <TextView
+                android:text="Results"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:id="@+id/lblBarrageResults"
+                android:layout_gravity="center_vertical" />
+            <TextView
+                android:text="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".80"
+                android:layout_toRightOf="@+id/lblBarrageResults"
+                android:id="@+id/txtBarrageResults"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textAppearance="@android:style/TextAppearance.Large"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

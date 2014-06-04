@@ -29,8 +29,12 @@ public class Results<T extends Comparable<? super T>> {
         this.results = results;
     }
 
-    public boolean lessThan(T v) {
-        return (value.compareTo(v) > 0);
+    public boolean compare(T v) {
+        if (v.getClass() == String.class)
+            return value.equals(v);
+        if (v.getClass() == Integer.class)
+            return (value.compareTo(v) > 0);
+        return false;
     }
 
     public Result getResult(int d) {

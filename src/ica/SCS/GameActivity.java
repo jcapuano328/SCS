@@ -139,18 +139,17 @@ public class GameActivity extends Activity {
 			}
 		});        
 
-        /*
 		btnBarrage.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                Intent fireDetail = new Intent (me, FireCombatActivity.class);
-                fireDetail.putExtra("Battle", game.getBattle().getId());
-                fireDetail.putExtra ("Scenario", game.getScenario().getId());
+                Intent barrageDetail = new Intent (me, BarrageActivity.class);
+                barrageDetail.putExtra("Game", game.getId());
 
-                startActivity (fireDetail);
+                startActivity (barrageDetail);
             }
         });
 
+        /*
 		btnCombat.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
