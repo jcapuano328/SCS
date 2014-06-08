@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <include
+            android:id="@+id/includeCombatTitlebar"
+            layout="@layout/subtitlebar" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25dp"
+            android:minHeight="25dp"
+            android:baselineAligned="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0"
+            android:id="@+id/layoutCombatAttackerDefender">
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25dp"
+                android:minHeight="25dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:id="@+id/layoutCombatAttacker">
+                <TextView
+                    android:text="Attacker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtCombatAttacker"
+                    style="@style/group_text" />
+                <LinearLayout
+                    android:id="@+id/layoutCombatAttackerStrength"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1.0">
+                    <Button
+                        android:id="@+id/btnCombatAttackerPrev"
+                        android:text="-"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".15"
+                        android:background="@drawable/blue_button"
+                        style="@style/button_text" />
+                    <EditText
+                        android:id="@+id/editCombatAttacker"
+                        android:inputType="numberDecimal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/btnCombatAttackerPrev"
+                        android:layout_alignTop="@+id/btnCombatAttackerPrev"
+                        android:layout_weight=".70"
+                        android:gravity="center" />
+                    <Button
+                        android:id="@+id/btnCombatAttackerNext"
+                        android:text="+"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".15"
+                        android:layout_alignTop="@+id/btnCombatAttackerPrev"
+                        android:layout_toRightOf="@+id/textCombatAttacker"
+                        android:background="@drawable/blue_button"
+                        style="@style/button_text" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layoutCombatTerrainLabel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="Terrain"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:id="@+id/lblCombatTerrain" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layoutCombatTerrain"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinCombatTerrain" />
+                </LinearLayout>
+            </LinearLayout>
+            
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25dp"
+                android:minHeight="25dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:id="@+id/layoutCombatDefender">
+                <TextView
+                    android:text="Defender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtCombatDefender"
+                    style="@style/group_text" />
+                <LinearLayout
+                    android:id="@+id/layoutCombatDefenderStrength"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1.0">
+                    <Button
+                        android:id="@+id/btnCombatDefenderPrev"
+                        android:text="-"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".15"
+                        android:background="@drawable/blue_button"
+                        style="@style/button_text" />
+                    <EditText
+                        android:id="@+id/editCombatDefender"
+                        android:inputType="numberDecimal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/btnCombatDefenderPrev"
+                        android:layout_alignTop="@+id/btnCombatDefenderPrev"
+                        android:layout_weight=".70"
+                        android:gravity="center" />
+                    <Button
+                        android:id="@+id/btnCombatDefenderNext"
+                        android:text="+"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".15"
+                        android:layout_alignTop="@+id/btnCombatDefenderPrev"
+                        android:layout_toRightOf="@+id/textCombatDefender"
+                        android:background="@drawable/blue_button"
+                        style="@style/button_text" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/layoutCombatTerrainBtweenLabel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="Between"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:id="@+id/lblCombatTerrainBtween" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layoutCombatTerrainBtween"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinCombatTerrainBtween" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/layoutCombatOddsSelect"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0">
+            <TextView
+                android:text="Odds"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".15"
+                android:layout_toLeftOf="@+id/spinCombatOdds"
+                android:id="@+id/lblCombatOdds" />
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".75"
+                android:layout_toRightOf="@+id/lblCombatOdds"
+                android:id="@+id/spinCombatOdds" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/layoutCombatModifiers"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+            <ListView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/listCombatModifiers"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutCombatDice"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:weightSum="1.0">
+            <ImageView
+                android:id="@+id/imgCombatDie1"
+                android:src="@drawable/whiteb1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:layout_gravity="center"
+                android:clickable="true" />
+            <ImageView
+                android:id="@+id/imgCombatDie2"
+                android:src="@drawable/redw1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/imgCombatDie1"
+                android:clickable="true" />
+            <Button
+                android:id="@+id/btnCombatDiceRoll"
+                android:text="Roll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".25"
+                android:layout_alignTop="@+id/btnCombatDefenderIncrPrev"
+                android:layout_toRightOf="@+id/imgCombatDie5"
+                android:background="@drawable/red_button"
+                style="@style/button_text" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:minWidth="25dp"
+            android:minHeight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0"
+            android:paddingTop="10dp"
+            android:id="@+id/layoutCombatResults">
+            <TextView
+                android:text="Results"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:id="@+id/lblCombatResults"
+                android:layout_gravity="center_vertical" />
+            <TextView
+                android:text="2"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".80"
+                android:layout_toRightOf="@+id/lblCombatResults"
+                android:id="@+id/txtCombatResults"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

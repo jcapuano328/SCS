@@ -9,8 +9,10 @@ public class GameTable<T extends Comparable<? super T>> {
     private DiceDefinition dd;
     private ArrayList<Results<T>> table;
     private ArrayList<Modifier> modifiers;
+    private int defaultValue;
 
     public GameTable() {
+        defaultValue = 0;
         table = new ArrayList<Results<T>>();
         modifiers = new ArrayList<Modifier>();
     }
@@ -67,19 +69,18 @@ public class GameTable<T extends Comparable<? super T>> {
         return l;
     }
     
-    
     public Results<T> getDefault() {
-        return table.get(0);
+        return table.get(defaultValue);
     }
     
     public String[] getValueList() {
 		ArrayList<String> l = new ArrayList<String>();
 		for (Results<T> t : table)
-			l.add(t.getValue().toString());
+			l.add(t.getDisplayValue());
         String[] a = new String[l.size()];
-		l.toArray(a);
+        l.toArray(a);
         return a;
-	}    
+	}
     
     public int getValueIndex(Results<T> item) {
 		for (int i=0; i<table.size(); i++) {

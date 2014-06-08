@@ -21,6 +21,15 @@ public class Results<T extends Comparable<? super T>> {
         this.value = v;
     }
 
+    public String getDisplayValue() {
+        if (value.getClass() == Integer.class) {
+            int i = Integer.parseInt(value.toString());
+            int v = Math.abs(i);
+            return (i < 0) ? ("1:" + Integer.toString(v)) : (Integer.toString(v) + ":1");
+        }
+        return value.toString();
+    }
+
     public ArrayList<Result> getResults() {
         return results;
     }
@@ -33,7 +42,7 @@ public class Results<T extends Comparable<? super T>> {
         if (v.getClass() == String.class)
             return value.equals(v);
         if (v.getClass() == Integer.class)
-            return (value.compareTo(v) > 0);
+            return (value.compareTo(v) >= 0);
         return false;
     }
 

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp" 
+    android:weightSum="1.0"
+    android:background="@android:color/background_light">
+    
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:layout_weight=".40"
+            android:text="Modifier"
+            android:gravity="center_vertical|center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:id="@+id/lblCombatModifier"
+            android:textColor="@android:color/primary_text_light"/>
+
+    <Button
+            android:id="@+id/btnCombatModAttackerPrev"
+            android:text="-"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".10"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+    <EditText
+            android:id="@+id/editCombatModAttacker"
+            android:inputType="numberDecimal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnCombatModAttackerPrev"
+            android:layout_alignTop="@+id/btnCombatModAttackerPrev"
+            android:layout_weight=".10"
+            android:gravity="center"
+            android:textColor="@android:color/primary_text_light"/>
+    <Button
+            android:id="@+id/btnCombatModAttackerNext"
+            android:text="+"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".10"
+            android:layout_alignTop="@+id/btnCombatModAttackerPrev"
+            android:layout_toRightOf="@+id/textCombatModAttacker"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+
+    <Button
+            android:id="@+id/btnCombatModDefenderPrev"
+            android:text="-"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".10"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+    <EditText
+            android:id="@+id/editCombatModDefender"
+            android:inputType="numberDecimal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnCombatModDefenderPrev"
+            android:layout_alignTop="@+id/btnCombatModDefenderPrev"
+            android:layout_weight=".10"
+            android:gravity="center"
+            android:textColor="@android:color/primary_text_light"/>
+    <Button
+            android:id="@+id/btnCombatModDefenderNext"
+            android:text="+"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".10"
+            android:layout_alignTop="@+id/btnCombatModDefenderPrev"
+            android:layout_toRightOf="@+id/textCombatModDefender"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+</LinearLayout>

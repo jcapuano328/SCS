@@ -122,10 +122,14 @@ public class GameRepository {
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals("attackmod")) {
-                tm.setAttack(readModifier(reader));
+                Modifier m = readModifier(reader);
+                m.setCount(1);
+                tm.setAttack(m);
             }
             else if (name.equals("defendmod")) {
-                tm.setDefend(readModifier(reader));
+                Modifier m = readModifier(reader);
+                m.setCount(1);
+                tm.setDefend(m);
             }
             else {
                 reader.skipValue();

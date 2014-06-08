@@ -149,18 +149,17 @@ public class GameActivity extends Activity {
             }
         });
 
-        /*
 		btnCombat.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
-			    Intent meleeDetail = new Intent (me, MeleeCombatActivity.class);
-			    meleeDetail.putExtra("Battle", game.getBattle().getId());
-			    meleeDetail.putExtra ("Scenario", game.getScenario().getId());
+			    Intent combatDetail = new Intent (me, CombatActivity.class);
+			    combatDetail.putExtra("Game", game.getId());
 
-			    startActivity (meleeDetail);
+			    startActivity (combatDetail);
             }
         });
 			
+        /*
 		btnCustom.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
