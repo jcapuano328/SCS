@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <include
+        android:id="@+id/includeVictoryTitlebar"
+        layout="@layout/subtitlebar" />
+              
+    <LinearLayout
+        android:id="@+id/layoutPlayer1VP"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1.0">
+        <TextView
+            android:text="Player 1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".40"
+            android:id="@+id/txtPlayer1"
+            style="@style/group_text" />
+        <Button
+            android:id="@+id/btnPlayer1VPPrev"
+            android:text="-"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+        <EditText
+            android:id="@+id/editPlayer1VP"
+            android:inputType="numberDecimal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnPlayer1VPPrev"
+            android:layout_alignTop="@+id/btnPlayer1VPPrev"
+            android:layout_weight=".30"
+            android:gravity="center" />
+        <Button
+            android:id="@+id/btnPlayer1VPNext"
+            android:text="+"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:layout_alignTop="@+id/btnPlayer1VPPrev"
+            android:layout_toRightOf="@+id/editPlayer1VP"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutPlayer2VP"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1.0">
+        
+        <TextView
+            android:text="Player 2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".40"
+            android:id="@+id/txtPlayer2"
+            style="@style/group_text" />
+            
+        <Button
+            android:id="@+id/btnPlayer2VPPrev"
+            android:text="-"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+        <EditText
+            android:id="@+id/editPlayer2VP"
+            android:inputType="numberDecimal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnPlayer2VPPrev"
+            android:layout_alignTop="@+id/btnPlayer2VPPrev"
+            android:layout_weight=".30"
+            android:gravity="center" />
+        <Button
+            android:id="@+id/btnPlayer2VPNext"
+            android:text="+"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:layout_alignTop="@+id/btnPlayer2VPPrev"
+            android:layout_toRightOf="@+id/editPlayer2VP"
+            android:background="@drawable/blue_button"
+            style="@style/button_text" />
+    </LinearLayout>
+              
+</LinearLayout>

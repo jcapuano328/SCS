@@ -202,6 +202,8 @@ public class BarrageActivity extends Activity {
 	}
     
     private void navigateUp() {
-		startActivity(new Intent(this, MainActivity.class));
+		Intent gameDetail = new Intent (this, GameActivity.class);
+		gameDetail.putExtra("Game", game.getId());
+		startActivity (gameDetail);
 	}
 }

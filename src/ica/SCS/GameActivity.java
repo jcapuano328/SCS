@@ -159,29 +159,21 @@ public class GameActivity extends Activity {
             }
         });
 			
-        /*
 		btnCustom.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
-			    Intent moraleDetail = new Intent (me, MoraleActivity.class);
-			    moraleDetail.putExtra("Battle", game.getBattle().getId());
-			    moraleDetail.putExtra ("Scenario", game.getScenario().getId());
-
-			    startActivity (moraleDetail);
             }
         });
 		
 		btnVictory.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
-			    Intent generalDetail = new Intent (me, GeneralActivity.class);
-			    generalDetail.putExtra("Battle", game.getBattle().getId());
-			    generalDetail.putExtra ("Scenario", game.getScenario().getId());
+			    Intent victoryDetail = new Intent (me, VictoryActivity.class);
+			    victoryDetail.putExtra("Game", game.getId());
 
-			    startActivity (generalDetail);
+			    startActivity (victoryDetail);
             }
         });
-        */
         
 		update();
 	}
