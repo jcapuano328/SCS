@@ -50,6 +50,9 @@ public class GameRepository {
             else if (name.equals("sort")) {
                 game.setSort(reader.nextInt());
             } 
+            else if (name.equals("custom")) {
+                game.setCustom(reader.nextString());
+            }                
             else if (name.equals("players") && reader.peek() != JsonToken.NULL) {
                 game.setPlayers(readStrings(reader));
             } 

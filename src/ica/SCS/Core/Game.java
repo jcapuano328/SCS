@@ -11,6 +11,7 @@ public class Game {
     private String desc;
     private String image;
     private int sort;
+    private String custom;
     private ArrayList<String> players;
     private ArrayList<String> turns;
     private ArrayList<String> phases;
@@ -61,6 +62,18 @@ public class Game {
 
     public void setSort(int sort) {
         this.sort = sort;
+    }
+
+    public boolean hasCustom() {
+        return !custom.isEmpty();
+    }
+    
+    public String getCustom() {
+        return custom;
+    }
+
+    public void setCustom(String custom) {
+        this.custom = custom;
     }
 
     public ArrayList<String> getPlayers() {

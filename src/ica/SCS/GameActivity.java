@@ -158,10 +158,22 @@ public class GameActivity extends Activity {
 			    startActivity (combatDetail);
             }
         });
-			
+		
+        btnCustom.setVisibility(game.hasCustom() ? View.VISIBLE : View.INVISIBLE);	
 		btnCustom.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
+                try {
+                    String className = game.getCustom();
+                    if (!className.isEmpty()) {
+                        Intent customDetail = new Intent (me, Class.forName(className));
+                        customDetail.putExtra("Game", game.getId());
+                        startActivity (customDetail);
+                    }
+                }
+                catch (Exception ex) {
+                    Log.e("Custom Activity", "Failed to launch custom activity", ex);
+                }
             }
         });
 		
@@ -170,7 +182,6 @@ public class GameActivity extends Activity {
             public void onClick(View arg0) {
 			    Intent victoryDetail = new Intent (me, VictoryActivity.class);
 			    victoryDetail.putExtra("Game", game.getId());
-
 			    startActivity (victoryDetail);
             }
         });
