@@ -51,7 +51,7 @@ public class GameRepository {
                 game.setSort(reader.nextInt());
             } 
             else if (name.equals("custom")) {
-                game.setCustom(reader.nextString());
+                game.setCustom(readCustom(reader));
             }                
             else if (name.equals("players") && reader.peek() != JsonToken.NULL) {
                 game.setPlayers(readStrings(reader));
@@ -77,6 +77,25 @@ public class GameRepository {
         }
         reader.endObject();
         return game;
+    }
+    
+    private static Custom readCustom(JsonReader reader) throws IOException {
+        Custom c = new Custom();
+        reader.beginObject();
+        while (reader.hasNext()) {
+            String name = reader.nextName();
+            if (name.equals("class")) {
+                c.setClassName(reader.nextString());
+            }
+            else if (name.equals("image")) {
+                c.setImageName(reader.nextString());
+            }
+            else {
+                reader.skipValue();
+            }
+        }
+        reader.endObject();
+        return c;
     }
     
     private static ArrayList<String> readStrings(JsonReader reader) throws IOException {

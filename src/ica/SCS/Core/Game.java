@@ -11,7 +11,7 @@ public class Game {
     private String desc;
     private String image;
     private int sort;
-    private String custom;
+    private Custom custom;
     private ArrayList<String> players;
     private ArrayList<String> turns;
     private ArrayList<String> phases;
@@ -65,14 +65,14 @@ public class Game {
     }
 
     public boolean hasCustom() {
-        return !custom.isEmpty();
+        return custom != null;
     }
     
-    public String getCustom() {
+    public Custom getCustom() {
         return custom;
     }
 
-    public void setCustom(String custom) {
+    public void setCustom(Custom custom) {
         this.custom = custom;
     }
 

@@ -159,23 +159,31 @@ public class GameActivity extends Activity {
             }
         });
 		
-        btnCustom.setVisibility(game.hasCustom() ? View.VISIBLE : View.INVISIBLE);	
-		btnCustom.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                try {
-                    String className = game.getCustom();
-                    if (!className.isEmpty()) {
-                        Intent customDetail = new Intent (me, Class.forName(className));
-                        customDetail.putExtra("Game", game.getId());
-                        startActivity (customDetail);
+        if (game.hasCustom()) {
+            btnCustom.setVisibility(View.VISIBLE);	
+            
+            int id = getApplicationContext().getResources().getIdentifier("drawable/" + game.getCustom().getImageName(), null, getApplicationContext().getPackageName());
+            btnCustom.setImageResource(id);
+		    btnCustom.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View arg0) {
+                    try {
+                        String className = game.getCustom().getClassName();
+                        if (!className.isEmpty()) {
+                            Intent customDetail = new Intent (me, Class.forName("ica.SCS." + className));
+                            customDetail.putExtra("Game", game.getId());
+                            startActivity (customDetail);
+                        }
+                    }
+                    catch (Exception ex) {
+                        Log.e("Custom Activity", "Failed to launch custom activity", ex);
                     }
                 }
-                catch (Exception ex) {
-                    Log.e("Custom Activity", "Failed to launch custom activity", ex);
-                }
-            }
-        });
+            });
+        }
+        else {
+            btnCustom.setVisibility(View.INVISIBLE);	
+        }
 		
 		btnVictory.setOnClickListener(new OnClickListener() {
             @Override

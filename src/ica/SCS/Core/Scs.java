@@ -87,6 +87,18 @@ public class Scs {
         }
         saved.setTurn(turn);
     }
+
+    public static String offsetTurn(Game game, Saved saved, int offset) {
+        int turn = saved.getTurn() + offset;
+        
+        if (turn < 0) {
+            turn = 0;
+        }
+        else if (++turn >= game.getTurns().size()) {
+            turn = game.getTurns().size() - 1;
+        }
+        return game.getTurns().get(turn);
+    }
     
     public static String getCurrentTurn(Game game, Saved saved) {
         return game.getTurns().get(saved.getTurn());

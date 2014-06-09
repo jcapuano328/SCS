@@ -16,5 +16,6 @@
         <activity android:name=".BarrageActivity"/>
         <activity android:name=".CombatActivity"/>
         <activity android:name=".VictoryActivity"/>
+        <activity android:name=".DopActivity"/>
     </application>
 </manifest>

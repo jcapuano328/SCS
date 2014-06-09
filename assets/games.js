@@ -5498,6 +5498,10 @@
 	    "desc": "The First 100 Days on the Western Front: 1914",
         "image": "driveonparis",
 	    "sort": 7,
+        "custom": {
+        	"class": "DopActivity",
+        	"image": "dop"
+		},            
 	    "players": [
 	        "German",
 	        "Allied"

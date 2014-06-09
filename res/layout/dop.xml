@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <include
+            android:id="@+id/includeDopTitlebar"
+            layout="@layout/subtitlebar" />
+            
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reconstitution"
+                android:id="@+id/radioDopReconstitution" android:paddingEnd="50dp"/>
+        <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In Command"
+                android:id="@+id/chkDopInCommand"/>
+    </LinearLayout>
+    <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Force March"
+            android:id="@+id/radioDopForceMarch"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="Result"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblDopResults"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="20dp"/>
+        <TextView
+                android:text="NE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtDopResults"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textAppearance="@android:style/TextAppearance.Large"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/layoutDopDice"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:weightSum="1.0"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+        <ImageView
+                android:id="@+id/imgDopDie1"
+                android:src="@drawable/whiteb1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:layout_gravity="center"
+                android:clickable="true" />
+        <Button
+                android:id="@+id/btnDopDiceRoll"
+                android:text="Roll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".25"
+                android:layout_alignTop="@+id/imgDopDie1"
+                android:layout_toRightOf="@+id/imgDopDie1"
+                android:background="@drawable/red_button"
+                style="@style/button_text" />
+    </LinearLayout>
+</LinearLayout>
