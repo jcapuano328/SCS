@@ -11,7 +11,7 @@ public class Saved {
     private int player2VP;
 
     public Saved() {
-        game = 0;
+        game = -1;
         turn = 0;
         phase = 0;
         player1VP = 0;
@@ -57,7 +57,11 @@ public class Saved {
     public void setPlayer2VP(int player2VP) {
         this.player2VP = player2VP;
     }
-    
+
+    public boolean isValid() {
+        return game >= 0;
+    }
+
     public void reset(Game g) {
 		game = g.getId();
 		turn = 0;

@@ -19,6 +19,8 @@ public class MainActivity extends Activity {
     private ListView gameList;
     private Activity me;
 
+    private static boolean initial = true;
+    
     /**
      * Called when the activity is first created.
      */
@@ -38,23 +40,33 @@ public class MainActivity extends Activity {
         catch (Exception ex){
             Log.e("onCreate", "Failed to load games?", ex);
         }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume ();
 
         gameList.setAdapter(new ListItemAdapter(getApplicationContext(), games));
         gameList.setOnItemClickListener( new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Game game = games.get(position);
-                // display the game view
-                Intent gameDetail = new Intent (me, GameActivity.class);
-                gameDetail.putExtra("Game", game.getId());
-
-                startActivity (gameDetail);
+                showGame(game);
             }
         });
+        
+        if (initial) {
+            Saved saved = Scs.getSaved(null);
+            if (saved.isValid()) {
+                Game game = Scs.getGame(saved.getGame());
+                showGame(game);
+            }
+        }
+        initial = false;
+    }
+    
+    private void showGame(Game game) {
+        // display the game view
+        if (game != null) {
+            Intent gameDetail = new Intent (me, GameActivity.class);
+            gameDetail.putExtra("Game", game.getId());
+
+            startActivity (gameDetail);
+        }
     }
 }

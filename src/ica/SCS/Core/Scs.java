@@ -47,7 +47,8 @@ public class Scs {
         }
         catch (FileNotFoundException fex) {
             saved = new Saved();
-            saved.setGame(game.getId());
+            if (game != null)
+                saved.setGame(game.getId());
         }
         catch (Exception ex) {
             Log.e("getSaved", "Failed to get saved game", ex);
