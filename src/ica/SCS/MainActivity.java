@@ -8,6 +8,8 @@ import android.widget.ListView;
 import android.view.View.OnClickListener;
 import android.view.View;
 import android.util.Log;
+
+import ica.SCS.Adapters.ListItemAdapter;
 import ica.SCS.Core.*;
 
 import java.util.*;

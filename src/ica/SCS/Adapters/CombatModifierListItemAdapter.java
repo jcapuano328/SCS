@@ -1,4 +1,4 @@
-package ica.SCS;
+package ica.SCS.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.*;
 
+import ica.SCS.R;
 import ica.SCS.Core.*;
 
 import java.util.*;

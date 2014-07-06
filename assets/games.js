@@ -2038,7 +2038,7 @@
 	{
 	    "id": 2,
 	    "name": "Ardennes",
-	    "desc": "",
+	    "desc": "The Battle of the Bulge",
         "image": "ardennes",
 	    "sort": 3,
 	    "players": [
@@ -5719,7 +5719,7 @@
         "image": "driveonparis",
 	    "sort": 7,
         "custom": {
-        	"class": "DopActivity",
+        	"class": "DopFragment",
         	"image": "dop"
 		},            
 	    "players": [

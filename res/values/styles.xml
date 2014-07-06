@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="android:Theme.Black" />
-    <style name="MainTitleBarStyle">
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">45dp</item>
-        <item name="android:orientation">horizontal</item>
+    <style name="AppTheme" parent="@android:style/Theme.Holo">
+        <item name="android:actionBarStyle">@style/AppTheme.ActionBarStyle</item>
     </style>
-    <style name="SubTitleBarStyle">
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">45dp</item>
-        <item name="android:orientation">horizontal</item>
+
+    <style name="AppTheme.ActionBarStyle" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:titleTextStyle">@style/AppTheme.ActionBar.TitleTextStyle</item>
+        <item name="android:subtitleTextStyle">@style/AppTheme.ActionBar.ActionBarSubTitleText</item>
     </style>
+
+    <style name="AppTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="AppTheme.ActionBar.ActionBarSubTitleText" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+
+    <color name="red">#ef4444</color>
+    <color name="blue">#050DFA</color>
+    <color name="white">#ffffff</color>
+
     <style name="button_text" >
         <item name="android:layout_width" >fill_parent</item>
         <item name="android:layout_height" >wrap_content</item>

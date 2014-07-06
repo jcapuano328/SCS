@@ -7,9 +7,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal">
-        <include
-            android:id="@+id/includeCombatTitlebar"
-            layout="@layout/subtitlebar" />
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25dp"
@@ -188,7 +185,7 @@
                 android:layout_height="wrap_content">
             <ListView
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="228dp"
                     android:id="@+id/listCombatModifiers"/>
         </LinearLayout>
 
@@ -197,7 +194,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:weightSum="1.0">
+            android:weightSum="1.0" android:paddingBottom="5dp" android:paddingTop="10dp">
             <ImageView
                 android:id="@+id/imgCombatDie1"
                 android:src="@drawable/whiteb1"

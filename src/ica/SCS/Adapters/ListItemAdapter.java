@@ -1,4 +1,4 @@
-package ica.SCS;
+package ica.SCS.Adapters;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.*;
+
+import ica.SCS.R;
+
 /**
  * Created by jcapuano on 5/31/2014.
  */
